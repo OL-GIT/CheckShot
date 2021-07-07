@@ -47,11 +47,11 @@ Method :
   olCheckSeq.py can be run at the sequence level.
   You need to specify the name of the shots you want to check.
   Ex :
-       * python3 olCheckSeq.py P1 P2 P3
-       * python3 olCheckSeq.py P*
-       * python3 olCheckSeq.py *
+- python3 olCheckSeq.py P1 P2 P3
+- python3 olCheckSeq.py P*
+- python3 olCheckSeq.py *
 
   olCheckShot.py can be run at the shot level.
   It does not need any argument.
   Ex :
-       * python3 olCheckShot.py
+- python3 olCheckShot.py
