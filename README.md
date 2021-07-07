@@ -31,7 +31,7 @@ that highlights the possible mistakes found.
 It can be launched shot by shot, or more globally in a sequence.
 
 - If automated, the user will be able to check the web version
-of the dump, which can be seen on any device that handles http pages.
+of the dump, which can be seen on any device that handles HTML pages.
 
 - In both cases, it will also generate a log report that would rather
 be intended for system administrators.
