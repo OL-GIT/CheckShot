@@ -1,15 +1,15 @@
 # CheckShot
-**Verifies sub-directories integrity of a post-production project.**
+### Verifies sub-directories integrity of a post-production project. ###
 
 
-Scenario :
+**Scenario :**
 
   Images are rendered on computers/renderfarms and dropped on a server.
   As the tree structure can be different in each project, SeqCheck
   will only be run at the sequence level. (Sequence/Shots)
 
 
-Main purpose : 
+**Main purpose :** 
 
   Check if the shots directories contain :
 - The file (.bounds) identifying the required start/end bounds of the shot.
@@ -21,7 +21,7 @@ Main purpose :
 - All the requested images, searching for missing files
 
 
-Usage :
+**Usage :**
 
   The tool is usable in a punctual case as well as on daily/hourly checks.
 It can be launched by a cron task, or a customized script.
@@ -41,22 +41,22 @@ glance at shots in progress, see the possible errors, or simply check
 the calculation progress.
 
 
-Requirements :
+**Requirements :**
 
   Python3 must be installed on the server if automated, 
   or on the client in case of a network-shared usage.
 
 
-Method :
+**Method :**
 
-  olCheckSeq.py can be run at the sequence level.
-  You need to specify the name of the shots you want to check :
+__olCheckSeq.py__ can be run at the sequence level.
+You need to specify the name of the shots you want to check :
   
-- python3 olCheckSeq.py P1 P2 P3
-- python3 olCheckSeq.py P*
-- python3 olCheckSeq.py *
+> python3 olCheckSeq.py P1 P2 P3
+> python3 olCheckSeq.py P*
+> python3 olCheckSeq.py *
 
-  olCheckShot.py can be run at the shot level.
-  It does not need any argument :
+__olCheckShot.py__ can be run at the shot level.
+It does not need any argument :
 
-- python3 olCheckShot.py
+> python3 olCheckShot.py
