@@ -51,12 +51,13 @@ the calculation progress.
 
 __olCheckSeq.py__ can be run at the sequence level.
 You need to specify the name of the shots you want to check :
-  
+```
 > python3 olCheckSeq.py P1 P2 P3
 > python3 olCheckSeq.py P*
 > python3 olCheckSeq.py *
-
+```
 __olCheckShot.py__ can be run at the shot level.
 It does not need any argument :
-
+```
 > python3 olCheckShot.py
+```
