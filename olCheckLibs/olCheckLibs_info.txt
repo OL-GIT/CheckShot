@@ -1,0 +1,6 @@
+The scripts in olCheckLibs are called by olCheckSeq.py and olCheckShot.py.
+- olCheckLib.py contains:
+  . colors definitions
+  . lines definitions
+  . various checks on bounds and images
+
