@@ -52,7 +52,7 @@ the calculation progress.
 *olCheckSeq.py* can be run at the sequence level.
 You need to specify the name of the shots you want to check :
 ```
-> python3 olCheckSeq.py P1 P2 P3
+> python3 olCheckSeq.py P01 P02 P03
 > python3 olCheckSeq.py P*
 > python3 olCheckSeq.py *
 ```
