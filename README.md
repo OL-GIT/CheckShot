@@ -52,6 +52,7 @@ the calculation progress.
 *olCheckSeq.py* can be run at the sequence level.
 You need to specify the name of the shots you want to check :
 ```
+> cd SAMPLE_PROJECT/S1
 > python3 olCheckSeq.py P01 P02 P03
 > python3 olCheckSeq.py P*
 > python3 olCheckSeq.py *
@@ -59,5 +60,6 @@ You need to specify the name of the shots you want to check :
 *olCheckShot.py* can be run at the shot level.
 It does not need any argument :
 ```
+> cd SAMPLE_PROJECT/S1/P01
 > python3 olCheckShot.py
 ```
