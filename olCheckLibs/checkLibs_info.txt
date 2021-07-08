@@ -1,11 +1,11 @@
 olCheckLibs contains 2 scripts that are called by olCheckSeq.py and olCheckShot.py.
 
-**olCheckLib.py contains :**
+olCheckLib.py contains :
 - colors definitions for console dump
 - lines defninitions for console dump
 - various checks on bouds and images
 
-**olHtmlLib.py contains :**
+olHtmlLib.py contains :
 - HTML definitions for HTTP style
 - HTML tables for HTTP dump pages
 
