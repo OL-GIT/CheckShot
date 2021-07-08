@@ -46,7 +46,8 @@ L'outil web est destiné aux superviseurs de post-production, qui peuvent rapide
 *olCheckSeq.py* peut être exécuté au niveau de la séquence.
 Vous devez spécifier le nom des plans que vous souhaitez vérifier :
 ```
-> python3 olCheckSeq.py P1 P2 P3
+> cd SAMPLE_PROJECT/S1
+> python3 olCheckSeq.py P01 P02 P03
 > python3 olCheckSeq.py P*
 > python3 olCheckSeq.py *
 ```
