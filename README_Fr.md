@@ -54,5 +54,6 @@ Vous devez spécifier le nom des plans que vous souhaitez vérifier :
 *olCheckShot.py* peut être exécuté au niveau du plan.
 Il n'a pas besoin d'argument :
 ```
+> cd SAMPLE_PROJECT/S1/P01
 > python3 olCheckShot.py
 ```
