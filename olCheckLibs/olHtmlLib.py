@@ -159,7 +159,6 @@ class olHtml():
 				seqPath = i
 			else:
 				seqPath = seqPath+"/"+i
-		print("seqPath :",seqPath)
 
 		### Write seqReport start
 		org_stdout = sys.stdout						# keep std output in variable
