@@ -1,11 +1,10 @@
+#! /usr/bin/env python3
 # -*- coding: utf8 -*-
 
 # ----------------------------------------
 ### LICENSE
 # ----------------------------------------
-# MIT License 
-# Copyright (c) 2021 OL-GIT
-
+# MIT License - Copyright (c) 2021 OL-GIT
 
 # ----------------------------------------
 ### IMPORTS
@@ -116,23 +115,6 @@ olPr.eLine()
 
 
 # ----------------------------------------
-### Create the sequence page
-### If the webDir does not exist, create the minisite
-
-if not os.path.isdir(webDir):
-	print(webDir, "does not exist, creating it.")
-	shutil.copytree(webRef, webDir)
-else:
-	print(webDir, "already exists.")
-
-seqRepName = webDir + "/seqReport.htm"
-olHtml.mkSeqPageStart(curDir)
-print("Writing Report", seqRepName)
-global olSeqReport
-org_stdout = sys.stdout						# keep std output in variable
-
-
-# ----------------------------------------
 ### Create the logFile
 org_stdout = sys.stdout
 
@@ -149,9 +131,49 @@ with open(logCS, 'w') as sLog:
 	print("# olCheckSeq                                              ", myDate, "#")
 	olPr.dLine2()
 	olPr.dLine1()
-	print(": Checking content in : ", curDir)
+	print("# Checking content in :", curDir)
 	olPr.eLine()
 	sys.stdout = org_stdout			# Back to std output
+
+# ----------------------------------------
+### Create the sequence page
+### If the webDir does not exist, create the minisite
+
+with open(logCS, 'a') as sLog:
+	if not os.path.isdir(webDir):
+		if not os.path.isdir(webRef):
+			text = ""
+			olCol.Yellow(text)
+			print("*** WARNING *** olCheckWebRef/ does not exist")
+			print("Directory olCheckWebRef must be installed in", pgmDir)
+			olCol.End()
+
+			sys.stdout = sLog					# set output to sLog
+			print("*** WARNING *** olCheckWebRef/ does not exist")
+			print("Directory olCheckWebRef/ must be installed in", pgmDir)
+			sys.stdout = org_stdout			# Back to std output
+			exit(0)
+
+		else:
+			print(webDir, "does not exist, creating it.")
+			shutil.copytree(webRef, webDir)
+
+			sys.stdout = sLog					# set output to sLog
+			print(webDir, "does not exist, creating it.")
+			sys.stdout = org_stdout			# Back to std output
+	else:
+		print(webDir, "already exists.")
+
+		sys.stdout = sLog					# set output to sLog
+		print(webDir, "already exists.")
+		sys.stdout = org_stdout			# Back to std output
+
+seqRepName = webDir + "/seqReport.htm"
+olHtml.mkSeqPageStart(curDir)
+print("Writing Report", seqRepName)
+global olSeqReport
+org_stdout = sys.stdout						# keep std output in variable
+
 
 
 # ----------------------------------------
