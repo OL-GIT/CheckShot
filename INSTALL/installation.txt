@@ -1,5 +1,0 @@
-Download either CheckShot.tar or CheckShot.zip
-Uncompress in the desired directory.
---
-Téléchargez CheckShot.tar ou CheckShot.zip
-Décompressez dans le répertoire désiré.
