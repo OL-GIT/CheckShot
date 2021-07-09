@@ -1,4 +1,4 @@
-# olCheckLibs contains 2 scripts that are called by olCheckSeq.py and olCheckShot.py.
+## olCheckLibs contains 2 scripts called by olCheckSeq.py and olCheckShot.py.
 
 ### olCheckLib.py contains : ###
 - colors definitions for console dump
