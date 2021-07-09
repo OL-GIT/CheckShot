@@ -45,15 +45,21 @@ the calculation progress.
 
 Python3 must be installed on the server if automated, 
 or on the client in case of a network-shared usage.
+
 It runs on Linux and Windows (with cygwin).
+
 
 
 **Installation :**
 
-Go to the place where you want to install the program and type :
+- Go to the place where you want to install the program and type :
 ```
 > git clone https://github.com/OL-GIT/CheckShot.git
 ```
+
+or
+
+- Download the .zip archive of the program [here](https://github.com/OL-GIT/CheckShot/archive/refs/heads/main.zip).
 
 
 **Method :**

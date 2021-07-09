@@ -1,10 +1,16 @@
+#! /usr/bin/env python3
 # -*- coding: utf8 -*-
 
 # ----------------------------------------
 ### LICENSE
 # ----------------------------------------
-# MIT License 
-# Copyright (c) 2021 OL-GIT
+# MIT License - Copyright (c) 2021 OL-GIT
+
+
+# ----------------------------------------
+### Images extension
+# ----------------------------------------
+ext = "jpg"
 
 
 # ----------------------------------------
@@ -53,9 +59,6 @@ logDir = prjDir + "/LOGS"
 checkShot = pgmDir + "olCheckShot.py"
 report = curDir + "/report.htm"
 
-### Images extension
-ext = "jpg"
-
 
 # ----------------------------------------
 ### TITLE
@@ -80,6 +83,7 @@ def olTitle():
 	olCol.End()
 	olPr.sLine()
 
+
 # ----------------------------------------
 ### INTRO
 # ----------------------------------------
@@ -103,6 +107,7 @@ def olIntro():
 	olPr.sLine()
 	olCol.End()
 	olPr.eLine()
+
 
 # ----------------------------------------
 ### LOGS

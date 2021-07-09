@@ -49,6 +49,10 @@ Aller dans le repertoire dans lequel vous voulez installer le programme, et tape
 ```
 > git clone https://github.com/OL-GIT/CheckShot.git
 ```
+ou
+
+- Téléchargez l'archive .zip du programme [ici](https://github.com/OL-GIT/CheckShot/archive/refs/heads/main.zip).
+```
 
 
 **Méthode :**
