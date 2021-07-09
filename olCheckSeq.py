@@ -24,36 +24,19 @@ if myOS ==  "cygwin":
 	pgmDir = "/cygdrive/e/OCR/P06/PROGRAM/"
 else:
 	pgmDir = "/home/ol/OCR/P06/PROGRAM/"
+
+# Silent mode for sys.path
+from io import StringIO
+org_stdout = sys.stdout
+silent = StringIO()
+sys.stdout = silent
+
 libDir = pgmDir + 'olCheckLibs/'
 sys.path.append(libDir)
-
-from olCheckLib import olCol, olPr, olChecks, olCompares
+from olCheckLib import olCol, olPr, olChecks
 from olHtmlLib import olHtml, olCss
 
-# ----------------------------------------
-### TITLE
-# ----------------------------------------
-olPr.bLine()
-text = "# ----------- OLCHECKSEQ ---------- v0.2 --------- 210630 ------------ # "
-olCol.Yellow(text)
-olCol.End()
-olPr.eLine()
-olPr.bLine()
-text=""
-print('''
-   XXXX  XX                      XX       XXXXX
-  X    X  X                       X      X     X
- X        X                       X      X
- X        X XX    XXXXX   XXXXX   X  XX  X        XXXXX   XXXXXX
- X        XX  X  X     X X     X  X  X    XXXXX  X     X X    X
- X        X   X  XXXXXXX X        X X          X XXXXXXX X    X
- X        X   X  X       X        XXX          X X       X    X
-  X    X  X   X  X     X X     X  X  X   X     X X     X X    X
-   XXXX  XXX XXX  XXXXX   XXXXX  XX   XX  XXXXX   XXXXX   XXXXX
-                                                              X
-                                                             XXX
-''')
-olPr.bLine()
+sys.stdout = org_stdout
 
 
 # ----------------------------------------
@@ -71,8 +54,35 @@ report = webDir + "/seqReport.htm"
 logDir = prjDir + "/LOGS/"
 checkShot = pgmDir + "olCheckShot.py"
 
+
+# ----------------------------------------
+### TITLE
+# ----------------------------------------
+olPr.bLine()
+print("# \033[33m----------- OLCHECKSEQ ---------- v0.3 --------- 210709 ------------\033[0m #")
+olPr.bLine()
 text=""
 olCol.Yellow(text)
+print('''
+   XXXX  XX                      XX       XXXXX
+  X    X  X                       X      X     X
+ X        X                       X      X
+ X        X XX    XXXXX   XXXXX   X  XX  X        XXXXX   XXXXXX
+ X        XX  X  X     X X     X  X  X    XXXXX  X     X X    X
+ X        X   X  XXXXXXX X        X X          X XXXXXXX X    X
+ X        X   X  X       X        XXX          X X       X    X
+  X    X  X   X  X     X X     X  X  X   X     X X     X X    X
+   XXXX  XXX XXX  XXXXX   XXXXX  XX   XX  XXXXX   XXXXX   XXXXX
+                                                              X
+                                                             XXX
+''')
+olCol.End()
+olPr.sLine()
+
+
+# ----------------------------------------
+### INTRO
+# ----------------------------------------
 print("myOS   :", myOS)
 print("myMach :", myMach)
 print("myDate :", myDate)
@@ -85,7 +95,6 @@ print("report :", report)
 print("logDir :", logDir)
 print("pgmDir :", pgmDir)
 print("checkShot :",checkShot)
-olCol.End()
 olPr.eLine()
 
 
@@ -106,7 +115,6 @@ olCol.End()
 olPr.eLine()
 
 
-
 # ----------------------------------------
 ### Create the sequence page
 ### If the webDir does not exist, create the minisite
@@ -122,7 +130,6 @@ olHtml.mkSeqPageStart(curDir)
 print("Writing Report", seqRepName)
 global olSeqReport
 org_stdout = sys.stdout						# keep std output in variable
-
 
 
 # ----------------------------------------
@@ -145,7 +152,6 @@ with open(logCS, 'w') as sLog:
 	print(": Checking content in : ", curDir)
 	olPr.eLine()
 	sys.stdout = org_stdout			# Back to std output
-
 
 
 # ----------------------------------------
@@ -303,7 +309,6 @@ with open(logCS, 'a') as sLog:
 	olPr.dLine1()
 	olPr.eLine()
 	sys.stdout = org_stdout			# Back to std output
-
 
 
 print("Finished Sequence")
