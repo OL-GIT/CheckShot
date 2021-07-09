@@ -54,7 +54,7 @@ checkShot = pgmDir + "olCheckShot.py"
 report = curDir + "/report.htm"
 
 ### Images extension
-ext = "tga"
+ext = "jpg"
 
 
 # ----------------------------------------
