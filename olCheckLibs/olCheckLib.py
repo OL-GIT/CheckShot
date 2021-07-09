@@ -216,7 +216,7 @@ class olChecks():
 								mystart = int(bounds[0])
 								myend = int(bounds[1])
 								duration = myend - mystart + 1
-								print("  Start:", mystart, "| End:", myend)
+								# print("  Start:", mystart, "| End:", myend)
 								print("  Expected duration :", duration)
 
 					### If there is only 1 bound
@@ -253,33 +253,10 @@ class olChecks():
 		for pic in listPics:
 			# print("PIC:", pic)
 			nbPics += 1
-		print("  Number of pics in", curDir,":", nbPics)
+		print("  Number of pics in shot :", nbPics)
 		return nbPics
 
 
-
-# --------------------------------------------------------------------------------
-### Comparisons
-class olCompares():
-
-
-	# ----------------------------------------
-	### Compare number of images and required duration
-	def nbImagesVsDuration(listPics):
-		print("\033[93m  --- Function nbImagesVsDuration \033[0m")
-		valid = 1
-		duration = int(olChecks.myBounds()[2])
-		nbPics = int(olChecks.nbImages(listPics))
-		if duration == nbPics:
-			print("*** OK *** Required pics = Number of pics ")
-		else:
-			print("*** NO *** Required pics != Number of pics ")
-			valid = 0
-
-		if valid == 0:
-			validShot = valid
-			# print("  VALIDSHOT :", validShot)
-			return validShot
 
 
 

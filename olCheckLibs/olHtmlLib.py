@@ -193,7 +193,7 @@ class olHtml():
 				shotPath = i
 			else:
 				shotPath = shotPath+"/"+i
-		print("shotPath :",shotPath)
+		# print("shotPath :",shotPath)
 		
 		### Write report start
 		org_stdout = sys.stdout						# keep std output in variable
