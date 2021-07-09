@@ -31,7 +31,7 @@ that highlights the possible mistakes found.
 It can be launched shot by shot, or more globally in a sequence.
 
 - If automated, the user will be able to check the web version
-of the dump, which can be seen on any device that handles HTML pages.
+of the dump, which can be seen on any device that handles http pages.
 
 - In both cases, it will also generate a log report that would rather
 be intended for system administrators.
@@ -43,8 +43,17 @@ the calculation progress.
 
 **Requirements :**
 
-  Python3 must be installed on the server if automated, 
-  or on the client in case of a network-shared usage.
+Python3 must be installed on the server if automated, 
+or on the client in case of a network-shared usage.
+It runs on Linux and Windows (with cygwin).
+
+
+**Installation :**
+
+Go to the place where you want to install the program and type :
+```
+> git clone https://github.com/OL-GIT/CheckShot.git
+```
 
 
 **Method :**
@@ -52,14 +61,12 @@ the calculation progress.
 *olCheckSeq.py* can be run at the sequence level.
 You need to specify the name of the shots you want to check :
 ```
-> cd SAMPLE_PROJECT/S1
-> python3 olCheckSeq.py P01 P02 P03
+> python3 olCheckSeq.py P1 P2 P3
 > python3 olCheckSeq.py P*
 > python3 olCheckSeq.py *
 ```
 *olCheckShot.py* can be run at the shot level.
 It does not need any argument :
 ```
-> cd SAMPLE_PROJECT/S1/P01
 > python3 olCheckShot.py
 ```

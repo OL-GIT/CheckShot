@@ -38,7 +38,17 @@ L'outil web est destiné aux superviseurs de post-production, qui peuvent rapide
 
 **Conditions :**
 
-  Python3 doit être installé sur le serveur s'il est automatisé, ou sur le client en cas d'utilisation en réseau.
+Python3 doit être installé sur le serveur s'il est automatisé, 
+ou sur le client en cas d'utilisation en réseau.
+Les scripts tournent sous Linux et Windows (avec cygwin).
+
+
+**Installation :**
+
+Aller dans le repertoire dans lequel vous voulez installer le programme, et tapez :
+```
+> git clone https://github.com/OL-GIT/CheckShot.git
+```
 
 
 **Méthode :**
@@ -46,14 +56,12 @@ L'outil web est destiné aux superviseurs de post-production, qui peuvent rapide
 *olCheckSeq.py* peut être exécuté au niveau de la séquence.
 Vous devez spécifier le nom des plans que vous souhaitez vérifier :
 ```
-> cd SAMPLE_PROJECT/S1
-> python3 olCheckSeq.py P01 P02 P03
+> python3 olCheckSeq.py P1 P2 P3
 > python3 olCheckSeq.py P*
 > python3 olCheckSeq.py *
 ```
 *olCheckShot.py* peut être exécuté au niveau du plan.
 Il n'a pas besoin d'argument :
 ```
-> cd SAMPLE_PROJECT/S1/P01
 > python3 olCheckShot.py
 ```
