@@ -46,6 +46,7 @@ Les scripts tournent sous Linux et Windows (avec cygwin).
 Dans le repertoire d'installation doivent figurer :
   * olCheckSeq.py
   * olCheckShot.py
+  
 et les répertoires :
   * olCheckLibs/
   * olCheckWebRef/
