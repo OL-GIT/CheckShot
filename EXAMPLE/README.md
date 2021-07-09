@@ -2,7 +2,7 @@
 
 ### A sample project to test olSeqCheck. ###
 
-**Installation**
+**Installation :**
 
 unzip SAMPLE_PROJECT.zip where you want.
 
