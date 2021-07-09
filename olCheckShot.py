@@ -33,7 +33,7 @@ sys.stdout = silent
 
 libDir = pgmDir + 'olCheckLibs/'
 sys.path.append(libDir)
-from olCheckLib import olCol, olPr, olReports, olChecks, olCompares
+from olCheckLib import olCol, olPr, olReports, olChecks
 from olHtmlLib import olHtml, olCss
 
 sys.stdout = org_stdout
@@ -54,7 +54,7 @@ checkShot = pgmDir + "olCheckShot.py"
 report = curDir + "/report.htm"
 
 ### Images extension
-ext = "jpg"
+ext = "tga"
 
 
 # ----------------------------------------
@@ -62,27 +62,28 @@ ext = "jpg"
 # ----------------------------------------
 def olTitle():
 	olPr.sLine()
-	print("# \033[33m------------ OLCHECKSHOT --------- v0.2 --------- 210630 ----------- # \033[0m")
+	print("# \033[33m------------ OLCHECKSHOT --------- v0.3 --------- 210709 -----------\033[0m #")
 	olPr.sLine()
+	text=""
+	olCol.Yellow(text)
 	print('''
-	   XXXX  XX                      XX       XXXXX  XX
-	  X    X  X                       X      X     X  X                X
-	 X        X                       X      X        X                X
-	 X        X XX    XXXXX   XXXXX   X  XX  X        X XX    XXXXX   XXXX
-	 X        XX  X  X     X X     X  X  X    XXXXX   XX  X  X     X   X
-	 X        X   X  XXXXXXX X        X X          X  X   X  X     X   X
-	 X        X   X  X       X        XXX          X  X   X  X     X   X
-	  X    X  X   X  X     X X     X  X  X   X     X  X   X  X     X   X  X
-	   XXXX  XXX XXX  XXXXX   XXXXX  XX   XX  XXXXX  XXX XXX  XXXXX     XX
+   XXXX  XX                      XX       XXXXX  XX
+  X    X  X                       X      X     X  X                X
+ X        X                       X      X        X                X
+ X        X XX    XXXXX   XXXXX   X  XX  X        X XX    XXXXX   XXXX
+ X        XX  X  X     X X     X  X  X    XXXXX   XX  X  X     X   X
+ X        X   X  XXXXXXX X        X X          X  X   X  X     X   X
+ X        X   X  X       X        XXX          X  X   X  X     X   X
+  X    X  X   X  X     X X     X  X  X   X     X  X   X  X     X   X  X
+   XXXX  XXX XXX  XXXXX   XXXXX  XX   XX  XXXXX  XXX XXX  XXXXX     XX
 	''')
+	olCol.End()
 	olPr.sLine()
 
 # ----------------------------------------
 ### INTRO
 # ----------------------------------------
 def olIntro():
-	text=""
-	olCol.Yellow(text)
 	print("myOS   :", myOS)
 	print("myMach :", myMach)
 	print("myDate :", myDate)
@@ -95,6 +96,11 @@ def olIntro():
 	print("checkShot :",checkShot)
 	print("seqReport :", seqReport)
 	print("report :", report)
+	olPr.sLine()
+	text=""
+	olCol.Yellow(text)
+	print("\033[1mWARNING - REQUIRED IMAGES EXTENSION :", ext, "\033[0m")
+	olPr.sLine()
 	olCol.End()
 	olPr.eLine()
 
@@ -116,17 +122,11 @@ def olLogs():
 	olPr.eLine()
 
 
-
-
 # ----------------------------------------
 ### Check Arguments
+# ----------------------------------------
 def checkArgv():
 	print("\033[93m--- Function checkArgv \033[0m")
-
-	whereAreWeNow = os.getcwd()
-	print("WE ARE NOW HERE", whereAreWeNow)
-
-	print("sys.argv :", sys.argv)
 
 	n = len(sys.argv)
 	if n == 1:
@@ -139,9 +139,6 @@ def checkArgv():
 
 		splitPath = os.path.split(curDir)
 		lastDir = (splitPath[1])
-
-		print("askedDir : ", askedDir)
-		print("lastDir : ", lastDir)
 
 		if askedDir == lastDir:
 			olPr.eLine()
@@ -167,20 +164,21 @@ def checkArgv():
 		exit(0)
 
 
-
 # ----------------------------------------
 ### INTRO2
+# ----------------------------------------
 def olIntro2():
 	print("WE ARE HERE :", curDir)
 	print("WE LOG HERE :", logDir)
 	olCol.End()
+	olPr.eLine()
 	olPr.sLine()
 	olPr.eLine()
 
 
-
 # ----------------------------------------
 ### WRITE REPORT START
+# ----------------------------------------
 def reportStart(leftField):
 	sys.stdout = olReport						# set output to olReport
 	olCss.TRTD()
@@ -193,15 +191,14 @@ def reportEnd():
 	sys.stdout = org_stdout						# Back to std output
 
 
-
 # ----------------------------------------
 ### Generate the log file if not already created by olCheckSeq.py
+# ----------------------------------------
 def makeLog():
 	print("\033[93m--- Function makeLog \033[0m")
 	org_stdout = sys.stdout
 
 	myDate = datetime.now().strftime("%y%m%d-%H%M")
-	# print("myDate =", myDate)
 
 	if os.path.isfile(logCS):
 		print("LOG CS :", logCS)
@@ -214,7 +211,6 @@ def makeLog():
 		olPr.eLine()
 
 		sys.stdout = sLog					# set output to sLog
-		# olPr.sLine()
 		olPr.dLine1()
 		olPr.dLine2()
 		print("# olCheckShot                                             ", myDate, "#")
@@ -230,10 +226,10 @@ def makeLog():
 	olPr.eLine()
 
 
-
 # ----------------------------------------
 ### Check if report.htm exist in Shot
 ### If so, backup to report_PATH_date.htm
+# ----------------------------------------
 def isReport():
 
 	if os.path.isfile('report.htm'):
@@ -270,9 +266,9 @@ def isReport():
 		olCol.End()
 
 
-
 # ----------------------------------------
 ### Check content in dir : .bounds + pics
+# ----------------------------------------
 def listContent():
 	print("\033[93m--- Function listContent \033[0m")
 	isHtm = "htm"
@@ -305,17 +301,19 @@ def listContent():
 		else:
 			listPics.append(file)
 
-	text = "listPics :"
+	firstPic = listPics[0]
+	lastPic = listPics[-1]
+
+	text = "listPics : " + firstPic + " -> " + lastPic
 	olCol.Yellow(text)
 	olCol.End()
 	olPr.eLine()
-	print(listPics)
 	olPr.eLine()
-
 
 
 # ----------------------------------------
 ### Compare number of images and required duration
+# ----------------------------------------
 def nbImagesVsDuration(listPics):
 	print("\033[93m  --- Function nbImagesVsDuration \033[0m")
 	valid = 1
@@ -341,7 +339,7 @@ def nbImagesVsDuration(listPics):
 
 
 	elif duration == nbPics:
-		print("*** OK *** Required pics = Number of pics :", nbPics)
+		print("*** OK *** Required pics :", nbPics)
 
 		reportStart(leftField)
 		print("        <li> OK - Required pics = Number of pics")
@@ -375,9 +373,9 @@ def nbImagesVsDuration(listPics):
 		return validShot
 
 
-
 # ----------------------------------------
 ### Compare number and duration
+# ----------------------------------------
 def compareNbPics():
 	print("\033[93m--- Function compareNbPics \033[0m")
 	valid = 1
@@ -389,9 +387,9 @@ def compareNbPics():
 	olPr.eLine()
 
 
-
 # ----------------------------------------
 ### Check if second field is numeric
+# ----------------------------------------
 def numInPic():
 	print("\033[93m--- Function numInPic \033[0m")
 	global validShot
@@ -444,9 +442,9 @@ def numInPic():
 		olPr.eLine()
 
 
-
 # ----------------------------------------
 ### Verify bounds and pics
+# ----------------------------------------
 def comparePicsWithBounds():
 	print("\033[93m--- Function comparePicsWithBounds \033[0m")
 	global validShot
@@ -468,7 +466,7 @@ def comparePicsWithBounds():
 		valid = 0
 		print("*** WARNING *** Incorrect .bounds file")
 	else:
-		print("  -> Duration found:", duration)
+		print("  -> Duration found :", duration)
 		while num <= duration:
 			realNum = str(num).zfill(4)
 			picMatch = [x for x in listPics if realNum in x]
@@ -512,9 +510,9 @@ def comparePicsWithBounds():
 	return validShot
 
 
-
 # ----------------------------------------
 ### Verify pics extensions
+# ----------------------------------------
 def verifyExts():
 	print("\033[93m--- Function verifyExts \033[0m")
 	global validShot
@@ -533,7 +531,6 @@ def verifyExts():
 
 		else:
 			picExt = picName[2]
-			# print("picName, picExt", picName, picExt)
 
 			try:
 				(picName[2]) = int(picName[2])
@@ -615,9 +612,9 @@ def verifyExts():
 		sys.stdout = org_stdout			# Back to std output
 
 
-
 # ----------------------------------------
 ### Verify if a file is empty
+# ----------------------------------------
 def verifyPics():
 	print("\033[93m--- Function verifyPics (emtpy or not ?) \033[0m")
 	global validShot
@@ -631,7 +628,6 @@ def verifyPics():
 			valid = 0
 		else:
 			pass
-			# print("OK   :", repr(size).rjust(10), spic.ljust(10))
 
 	if valid == 0:
 		validShot = valid
@@ -670,13 +666,12 @@ def verifyPics():
 	return validShot;
 
 
-
 # ----------------------------------------
 ### Is shot valid ?
+# ----------------------------------------
 def isShotValid():
 	olPr.sLine()
 	print("\033[93m--- Function isShotValid \033[0m")
-
 
 	if validShot == 0:
 		print("\033[91m\033[1mWARNING :", shotPath,"\033[0m")
@@ -727,9 +722,9 @@ def isShotValid():
 	olPr.eLine()
 
 
-
 # ----------------------------------------
 ### Write pics details in report
+# ----------------------------------------
 def detailPics():
 	print("\033[93m--- Function detailPics \033[0m")
 
@@ -758,15 +753,15 @@ def detailPics():
 	sys.stdout = org_stdout					# Back to std output
 
 
-
 # ----------------------------------------
 ### END
+# ----------------------------------------
 def thisIsTheEnd():
+	olPr.eLine()
 	text = "END of CheckShot"
 	olCol.Blue(text)
 	olCol.End()
 	text = ""
-
 
 
 
@@ -777,6 +772,7 @@ def thisIsTheEnd():
 olTitle()
 olIntro()
 olLogs()
+
 
 # ----------------------------------------
 ### CURRENT DIR DEFINITIONS
@@ -804,12 +800,14 @@ validShot = "1"
 # keep std output in variable
 org_stdout = sys.stdout						
 
+
 # ----------------------------------------
 ### LOGS AND REPORTS
 # ----------------------------------------
 repName = curDir + "/report.htm"
 makeLog()
 isReport()
+
 
 # ----------------------------------------
 ### CHECKS
@@ -818,7 +816,7 @@ with open(logCS, 'a') as sLog:
 	with open('report.htm', 'a') as olReport:
 		olPr.eLine()
 		olHtml.mkPageStart(curDir)
-		print("Writing Report", repName)
+		print("REPORT HERE :", repName)
 
 		olIntro2()
 		checkArgv()
@@ -831,6 +829,7 @@ with open(logCS, 'a') as sLog:
 		isShotValid()
 		detailPics()
 
+
 # ----------------------------------------
 ### END
 # ----------------------------------------
@@ -838,5 +837,3 @@ print("Finished Report")
 olHtml.mkPageEnd()
 sys.stdout = org_stdout					# Back to std output
 thisIsTheEnd()
-
-# exit(0)
