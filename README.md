@@ -48,12 +48,12 @@ or on the client in case of a network-shared usage.
 
 It runs on Linux and Windows (with cygwin).
 
-  Needed in the installation directory :
-    * olCheckSeq.py
-    * olCheckShot.py
-  and the subDirectories :
-    * olCheckLibs/
-    * olCheckWebRef/
+Needed in the installation directory :
+  * olCheckSeq.py
+  * olCheckShot.py
+and the subDirectories :
+  * olCheckLibs/
+  * olCheckWebRef/
 
 
 
