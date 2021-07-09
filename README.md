@@ -52,14 +52,15 @@ It runs on Linux and Windows (with cygwin).
 
 **Installation :**
 
-- Go to the place where you want to install the program and type :
+Go to the place where you want to install the program.
+
+- Download the .zip archive of the program [here](https://github.com/OL-GIT/CheckShot/archive/refs/heads/main.zip).
+
+or type :
+
 ```
 > git clone https://github.com/OL-GIT/CheckShot.git
 ```
-
-or
-
-- Download the .zip archive of the program [here](https://github.com/OL-GIT/CheckShot/archive/refs/heads/main.zip).
 
 
 **Method :**

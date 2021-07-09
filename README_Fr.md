@@ -45,13 +45,14 @@ Les scripts tournent sous Linux et Windows (avec cygwin).
 
 **Installation :**
 
-Aller dans le repertoire dans lequel vous voulez installer le programme, et tapez :
+Aller dans le repertoire dans lequel vous voulez installer le programme.
+
+- Téléchargez et décompressez l'archive .zip du programme [ici](https://github.com/OL-GIT/CheckShot/archive/refs/heads/main.zip).
+
+ou tapez :
+
 ```
 > git clone https://github.com/OL-GIT/CheckShot.git
-```
-ou
-
-- Téléchargez l'archive .zip du programme [ici](https://github.com/OL-GIT/CheckShot/archive/refs/heads/main.zip).
 ```
 
 
