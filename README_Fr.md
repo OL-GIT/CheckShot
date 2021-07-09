@@ -42,6 +42,13 @@ Python3 doit être installé sur le serveur s'il est automatisé,
 ou sur le client en cas d'utilisation en réseau.
 Les scripts tournent sous Linux et Windows (avec cygwin).
 
+  Dans le repertoire d'installation doivent figurer :
+    * olCheckSeq.py
+    * olCheckShot.py
+  et les répertoires :
+    * olCheckLibs/
+    * olCheckWebRef/
+
 
 **Installation :**
 
