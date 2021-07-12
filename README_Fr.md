@@ -84,14 +84,20 @@ Il n'a pas besoin d'argument :
 ## Resultats :
 
 - S'ils sont lancés manuellement, checkSeq et checkShot afficheront les résultats dans la console.
+
 >Cette méthode est recommandée pour un usage ponctuel.
 
 - Le ministe HTML se trouve dans $PROJ/$SEQ/.web/index.htm
+
 >seqreport.htm est affiché dans le cadre de gauche.
+
 >Les rapports de plans sont écrits dans $PROJ/$SEQ/$SHOT/report.htm
+
 >Ils seront affichés dans le cadre de droite du minisite.
+
 >Des versions archivées de report.htm sont copiées dans report_$PROJ_$SEQ_$SHOT_DATE_TIME.htm
 
 - Les fichiers globaux de log sont dans $PROJECT/LOGS/ (olCheckSeqlog.DATE-TIME.txt)
+
 >Ils contiennent des versions courtes des retours console.
 

@@ -90,14 +90,20 @@ It does not need any argument :
 ## Results :
 
 - If launched manually, checkSeq and checkShot will display the results in the console.
+
 >This method is recommended for punctual needs.
 
 - The HTML minisite will be found in $PROJ/$SEQ/.web/index.htm
+
 >It will display seqreport.htm in the left frame.
+
 >The shot reports are written in $PROJ/$SEQ/$SHOT/report.htm
+
 >They will we displayed in the right frame of the minisite.
+
 >Archived versions of report.htm are copied to report_$PROJ_$SEQ_$SHOT_DATE_TIME.htm
 
 - The global log files will be found in $PROJECT/LOGS/ (olCheckSeqlog.DATE-TIME.txt)
+
 >They contain short versions of the console dumps.
 
