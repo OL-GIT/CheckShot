@@ -13,18 +13,18 @@ copyOK="1"
 # --------------------------------------
 MISSING()
 {
-	echo -e "# -------------------------------------------------------- #"
-	echo -e "#                     \033[7m*** WARNING ***\033[0m                      #"
-	echo -e "# -------------------------------------------------------- #"
-	echo -e "Some files seem to be missing in current directory"
-	echo -e "When downloading and unzipping the installation archive,"
-	echo -e "the following files and directories should be present :"
-	echo -e "\033[1molCheckSeq.py olCheckShot.py and olCheckLibs/ olCheckWebRef/ \033[0m"
-	echo -e "# -------------------------------------------------------- #"
-	echo -e "You could try again to import the complete archive :"
-	echo -e "\033[1mgit clone https://github.com/OL-GIT/CheckShot.git\033[0m"
-	echo -e "or download the compressed archive :"
-	echo -e "\033[1mhttps://github.com/OL-GIT/CheckShot/archive/refs/heads/main.zip\033[0m"
+echo -e "# -------------------------------------------------------- #"
+echo -e "#                     \033[7m*** WARNING ***\033[0m                      #"
+echo -e "# -------------------------------------------------------- #"
+echo -e "Some files seem to be missing in current directory"
+echo -e "When downloading and unzipping the installation archive,"
+echo -e "the following files and directories should be present :"
+echo -e "\033[1molCheckSeq.py olCheckShot.py and olCheckLibs/ olCheckWebRef/ \033[0m"
+echo -e "# -------------------------------------------------------- #"
+echo -e "You could try again to import the complete archive :"
+echo -e "\033[1mgit clone https://github.com/OL-GIT/CheckShot.git\033[0m"
+echo -e "or download the compressed archive :"
+echo -e "\033[1mhttps://github.com/OL-GIT/CheckShot/archive/refs/heads/main.zip\033[0m"
 }
 
 # --------------------------------------
