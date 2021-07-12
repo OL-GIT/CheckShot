@@ -2,12 +2,12 @@
 ### Vérifie l'intégrité des sous-répertoires d'un projet de post-production. ###
 
 
-**Scenario :**
+## Scenario :
 
   Les images sont rendues sur des ordinateurs/fermes de rendu et déposées sur un serveur. L'arborescence pouvant être différente dans chaque projet, SeqCheck ne sera exécuté qu'au niveau de la séquence. (Séquence/Plans/Images)
 
 
-**Objectif principal :** 
+## Objectif principal :
 
   Vérifie si les répertoires des plans contiennent :
 - Le fichier (.bounds) identifiant les bornes de début/fin de plan souhaitées.
@@ -19,7 +19,7 @@
 - Toutes les images demandées, recherche des fichiers manquants
 
 
-**Utilisation :**
+## Utilisation :
 
   L'outil est utilisable dans un cas ponctuel ainsi que lors de contrôles journaliers/horaires.
 Il peut être lancé par une tâche cron ou un script personnalisé.
@@ -36,7 +36,7 @@ plutôt destiné aux administrateurs système.
 L'outil web est destiné aux superviseurs de post-production, qui peuvent rapidement jeter un coup d'œil sur les prises de vue en cours, voir les erreurs possibles, ou simplement vérifier la progression du calcul.
 
 
-**Conditions :**
+## Conditions :
 
 Python3 doit être installé sur le serveur s'il est automatisé, 
 ou sur le client en cas d'utilisation en réseau.
@@ -52,7 +52,7 @@ et les répertoires :
   * olCheckWebRef/
 
 
-**Installation :**
+## Installation :
 
 Aller dans le repertoire dans lequel vous voulez installer le programme.
 
@@ -65,7 +65,7 @@ ou tapez :
 ```
 
 
-**Méthode :**
+## Méthode :
 
 *olCheckSeq.py* peut être exécuté au niveau de la séquence.
 Vous devez spécifier le nom des plans que vous souhaitez vérifier :
@@ -79,3 +79,19 @@ Il n'a pas besoin d'argument :
 ```
 > python3 olCheckShot.py
 ```
+
+
+## Resultats :
+
+- S'ils sont lancés manuellement, checkSeq et checkShot afficheront les résultats dans la console.
+>Cette méthode est recommandée pour un usage ponctuel.
+
+- Le ministe HTML se trouve dans $PROJ/$SEQ/.web/index.htm
+>seqreport.htm est affiché dans le cadre de gauche.
+>Les rapports de plans sont écrits dans $PROJ/$SEQ/$SHOT/report.htm
+>Ils seront affichés dans le cadre de droite du minisite.
+>Des versions archivées de report.htm sont copiées dans report_$PROJ_$SEQ_$SHOT_DATE_TIME.htm
+
+- Les fichiers globaux de log sont dans $PROJECT/LOGS/ (olCheckSeqlog.DATE-TIME.txt)
+>Ils contiennent des versions courtes des retours console.
+
