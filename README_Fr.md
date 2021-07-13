@@ -54,7 +54,7 @@ et les répertoires :
 
 ## Installation :
 
-Aller dans le repertoire dans lequel vous voulez installer le programme.
+Allez dans le repertoire dans lequel vous voulez télécharger l'archive.
 
 - Téléchargez et décompressez l'archive .zip du programme [ici](https://github.com/OL-GIT/CheckShot/archive/refs/heads/main.zip).
 
@@ -62,6 +62,14 @@ ou tapez :
 
 ```
 > git clone https://github.com/OL-GIT/CheckShot.git
+```
+
+puis lancez installation :
+
+```
+> cd CheckShot
+> chmod 774 ./install.bash
+> sudo ./install.bash
 ```
 
 

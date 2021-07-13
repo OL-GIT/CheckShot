@@ -60,7 +60,7 @@ and the subDirectories :
 
 ## Installation :
 
-Go to the place where you want to install the program.
+Go to the place where you want to download the archive.
 
 - Download the .zip archive of the program [here](https://github.com/OL-GIT/CheckShot/archive/refs/heads/main.zip).
 
@@ -69,6 +69,15 @@ or type :
 ```
 > git clone https://github.com/OL-GIT/CheckShot.git
 ```
+
+then proceed with the installation :
+
+```
+> cd CheckShot
+> chmod 774 ./install.bash
+> sudo ./install.bash
+```
+
 
 
 ## Method :
