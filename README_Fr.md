@@ -4,7 +4,7 @@
 
 ## Scenario :
 
-  Les images sont rendues sur des ordinateurs/fermes de rendu et déposées sur un serveur. L'arborescence pouvant être différente dans chaque projet, SeqCheck ne sera exécuté qu'au niveau de la séquence. (Séquence/Plans/Images)
+  Les images sont rendues sur des ordinateurs/fermes de rendu et déposées sur un serveur. L'arborescence pouvant être différente dans chaque projet, CheckSeq ne sera exécuté qu'au niveau de la séquence. (Séquence/Plans/Images)
 
 
 ## Objectif principal :

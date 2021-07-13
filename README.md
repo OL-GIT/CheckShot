@@ -5,7 +5,7 @@
 ## Scenario :
 
   Images are rendered on computers/renderfarms and dropped on a server.
-  As the tree structure can be different in each project, SeqCheck
+  As the tree structure can be different in each project, CheckSeq
   will only be run at the sequence level. (Sequence/Shots/Images)
 
 

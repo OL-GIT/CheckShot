@@ -54,7 +54,7 @@ checkShot = pgmDir + "olCheckShot.py"
 ### TITLE
 # ----------------------------------------
 olPr.bLine()
-print("# \033[33m----------- OLCHECKSEQ ---------- v0.3 --------- 210709 ------------\033[0m #")
+print("# \033[33m----------- OLCHECKSEQ ---------- v0.4 --------- 210713 ------------\033[0m #")
 olPr.bLine()
 text=""
 olCol.Yellow(text)
@@ -127,7 +127,6 @@ with open(logCS, 'w') as sLog:
 	olPr.dLine2()
 	olPr.dLine1()
 	print("# Checking content in :", curDir)
-	olPr.eLine()
 	sys.stdout = org_stdout			# Back to std output
 
 # ----------------------------------------
@@ -175,14 +174,9 @@ org_stdout = sys.stdout						# keep std output in variable
 ### Go to the shots
 
 n = len(sys.argv)
-# print("Total arguments:", n)
-# print("Script :", sys.argv[0])
 
 if n == 1:
 	olPr.eLine()
-	# print("*** Usage : python3 olCheckSeq.py <argsuments>")
-	# print("*** Where <args> can be : P10, P1 P2 P3, P*, *")
-
 	text='''
 | Usage : python3 olCheckSeq.py <arguments>  |
 | Where <args> can be : P10, P1 P2 P3, P*, * |
@@ -217,7 +211,13 @@ else:
 	for itSeqLoop in range(1, n):
 		# print("i :", i, sys.argv[i], end = " ")
 		olPr.eLine()
-		olPr.bLine()
+		olPr.eLine()
+		olPr.dLine1()
+		olPr.dLine2()
+		print("# olCheckSeq                                              ", myDate, "#")
+		#print("# olCheckSeq ")
+		olPr.dLine2()
+		olPr.dLine1()
 		print("# CheckSeq Instruction :")
 		# print("    - Shot", i, "to check:", end = "")
 		print("    - Shot", itSeqLoop, "to check:")
@@ -229,7 +229,12 @@ else:
 		with open(logCS, 'a') as sLog:
 			sys.stdout = sLog					# set output to sLog
 			olPr.eLine()
-			olPr.bLine()
+			olPr.eLine()
+			olPr.dLine1()
+			olPr.dLine2()
+			print("# olCheckSeq                                              ", myDate, "#")
+			olPr.dLine2()
+			olPr.dLine1()
 			print("# CheckSeq Instruction :")
 			print("    - Shot", itSeqLoop, "to check:", end = " ")
 			print(sys.argv[itSeqLoop])

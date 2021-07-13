@@ -61,7 +61,7 @@ report = curDir + "/report.htm"
 # ----------------------------------------
 def olTitle():
 	olPr.sLine()
-	print("# \033[33m------------ OLCHECKSHOT --------- v0.3 --------- 210709 -----------\033[0m #")
+	print("# \033[33m------------ OLCHECKSHOT --------- v0.4 --------- 210713 -----------\033[0m #")
 	olPr.sLine()
 	text=""
 	olCol.Yellow(text)
@@ -554,7 +554,7 @@ def verifyExts():
 		print(badFields)
 		valid = 0
 		validShot = valid
-		print("VALIDSHOT :", validShot)
+		# print("VALIDSHOT :", validShot)
 		olPr.eLine()
 
 		reportStart(leftField)
@@ -584,7 +584,7 @@ def verifyExts():
 		print("*** WARNING *** Bad Extensions")
 		valid = 0
 		validShot = valid
-		print("VALIDSHOT :", validShot)
+		# print("VALIDSHOT :", validShot)
 		olPr.eLine()
 
 		reportStart(leftField)
@@ -638,7 +638,7 @@ def verifyPics():
 		validShot = valid
 		print("*** WARNING *** Empty pics found")
 		print("EMPTY PICS :", emptyPics)
-		print("VALIDSHOT :", validShot)
+		# print("VALIDSHOT :", validShot)
 
 		reportStart(leftField)
 		print("        <li> WARNING - Empty pics found :")
