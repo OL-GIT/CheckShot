@@ -175,7 +175,7 @@ class olHtml():
 		org_stdout = sys.stdout						# keep std output in variable
 		with open('.web/seqReport.htm', 'a') as olSeqReport:
 			sys.stdout = olSeqReport	
-			print(olCss.TRe)
+			olCss.TRe()
 			olHtml.mkTableEnd()
 			olHtml.mkEnd()
 			sys.stdout = org_stdout					# Back to std output
@@ -208,7 +208,7 @@ class olHtml():
 		org_stdout = sys.stdout						# keep std output in variable
 		with open('report.htm', 'a') as olReport:
 			sys.stdout = olReport	
-			olCss.TRe
+			olCss.TRe()
 			olHtml.mkTableEnd()
 			olHtml.mkEnd()
 			sys.stdout = org_stdout					# Back to std output
