@@ -103,7 +103,7 @@ then
 	cp olCheckShot.py $pgmDir
 	cp -r olCheckLibs $pgmDir
 	cp -r olCheckWebRef $pgmDir
-	chmod 754 olCheckSeq.py olCheckShot.py olCheckLibs olCheckWebRef
+	chmod -R 755 $pgmDir
 else
 	MISSING
 	exit 0
