@@ -36,7 +36,7 @@ Verifies sub-directories integrity of a post-production project.
 <h3><u>Scenario :</u></h3>
 Images are rendered on computers/renderfarms and dropped on a server.
 <br>
-As the tree structure can be different in each project, checkSeq
+As the tree structure can be different in each project, SeqCheck
 will only be run at the sequence level. (Sequence/Shots/Images)
 <br>
 <br>
@@ -48,15 +48,14 @@ will only be run at the sequence level. (Sequence/Shots/Images)
 <h3><u>Main purpose : </u></h3>
   Check if the shots directories contain :
 <br><font color="#aaaaaa">
-<li>The file (.bounds) identifying the required start/end bounds of the shot.
-<li>The adequacy with the number of images found.
-<li>Files with the correct number of fields (name.number.extension)
-<li>Files with the correct numerical field (4 digits, ie ####)
-<li>Files with the correct extension
-<li>Files with non-zero weight
-<li>All the requested images, searching for missing files
+<li>The file (.bounds) identifying the required start/end bounds of the shot.</li>
+<li>The adequacy with the number of images found.</li>
+<li>Files with the correct number of fields (name.number.extension)</li>
+<li>Files with the correct numerical field (4 digits, ie ####)</li>
+<li>Files with the correct extension</li>
+<li>Files with non-zero weight</li>
+<li>All the requested images, searching for missing files</li>
 </font>
-<br>
 <br>
 
 
@@ -67,21 +66,14 @@ The tool is usable in a punctual case as well as on daily/hourly checks.
 <br>
 <br>
 It can be launched by a cron task, or a customized script.
-<br>
 <br><font color="#aaaaaa">
 <li>If launched manually, the script generates a human readable report,
-that highlights the possible mistakes found.
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp; It can be launched shot by shot, or more globally in a sequence.
-<br>
-<br>
+that highlights the possible mistakes found.</li>
+<li>It can be launched shot by shot, or more globally in a sequence.</li>
 <li>If automated, the user will be able to check the web version
-of the dump, which can be seen on any device that handles http pages.
-<br>
-<br>
+of the dump, which can be seen on any device that handles http pages.</li>
 <li>In both cases, it will also generate a log report that would rather
-be intended for system administrators.
-<br>
+be intended for system administrators.</li>
 <br>
 </font>
 The web-tool is intended for post-production supervisors, who can quickly
@@ -102,19 +94,33 @@ It runs on Linux and Windows (with cygwin).
 <br>
 <br>
 Needed in the installation directory :
-<br><font color="#aaaaaa">
-<li>olCheckSeq.py
-<li>olCheckShot.py
-</font>
+<font color="#aaaaaa">
 <br>
+<dl>
+  <li>olCheckSeq.py</li>
+<br>
+  <li>olCheckShot.py</li>
+</font>
 <br>
 and the subDirectories :
-<br><font color="#aaaaaa">
-<li>olCheckLibs/
-<li>olCheckWebRef/
+<font color="#aaaaaa">
+<br>
+<dl>
+  <li>olCheckLibs/</li>
+    <dd>olCheckLib.py</dd>
+    <dd>olHtmlLib.py</dd>
+</dl>
+
+<dl>
+  <li>olCheckWebRef/</li>
+    <dd>index.htm</dd>
+    <dd>intro.htm</dd>
+    <dd>seqReport.htm</dd>
+<br>
 </font>
-<br>
-<br>
+
+
+
 
 
 
@@ -141,7 +147,18 @@ $ git clone https://github.com/OL-GIT/CheckShot.git
 <br>
 <br>
 
-
+then proceed with the installation :
+<br>
+<br>
+<center>
+<table border="0" width="95%" bgcolor="#888888"><tr><td><listing>
+$ cd CheckShot
+$ chmod 774 ./install.bash
+$ sudo ./install.bash
+</td></tr></table>
+</center>
+<br>
+<br>
 
 
 <hr noshade>
@@ -149,6 +166,8 @@ $ git clone https://github.com/OL-GIT/CheckShot.git
 olCheckSeq.py can be run at the sequence level.
 <br>
 You need to specify the name of the shots you want to check :
+<br>
+<br>
 <center>
 <table border="0" width="95%" bgcolor="#888888"><tr><td><listing>
 $ python3 olCheckSeq.py P1 P2 P3
@@ -158,6 +177,8 @@ $ python3 olCheckSeq.py *
 </center>
 <br>
 olCheckShot.py can be run at the shot level. It does not need any argument :
+<br>
+<br>
 <center>
 <table border="0" width="95%" bgcolor="#888888"><tr><td><listing>
 $ python3 olCheckShot.py
