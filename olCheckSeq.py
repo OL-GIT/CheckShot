@@ -18,11 +18,7 @@ import sys
 import time
 from datetime import datetime
 
-myOS = (sys.platform)
-if myOS ==  "cygwin":
-	pgmDir = "/cygdrive/e/OCR/P06/PROGRAM/"
-else:
-	pgmDir = "/home/ol/OCR/P06/PROGRAM/"
+pgmDir = "/opt/checkShot/"
 
 # Silent mode for sys.path
 from io import StringIO
@@ -82,8 +78,6 @@ olPr.sLine()
 # ----------------------------------------
 ### INTRO
 # ----------------------------------------
-print("myOS   :", myOS)
-print("myMach :", myMach)
 print("myDate :", myDate)
 print("curDir :", curDir)
 print("prjDir :", prjDir)
@@ -93,6 +87,7 @@ print("webDir :", webDir)
 print("report :", report)
 print("logDir :", logDir)
 print("pgmDir :", pgmDir)
+print("libDir :", libDir)
 print("checkShot :",checkShot)
 olPr.eLine()
 
@@ -198,7 +193,14 @@ if n == 1:
 
 	with open(report, 'a') as olSeqReport:
 		sys.stdout = olSeqReport	
-		print('<br><br><br><br>')
+		olCss.TRs()
+		olCss.TDs()
+		olCss.CEN()
+		print('        <br>')
+		print('        *** WARNING ***')
+		print('        <br><br>')
+		print('        Empty Shot List')
+		print('        <br><br>')
 		olCss.TDe()
 		olCss.TRe()
 		sys.stdout = org_stdout					# Back to std output
@@ -247,6 +249,10 @@ else:
 
 		try:
 				### Go to shot 
+				lastChar = (shotDir[-1])
+				if lastChar == "/":
+					shotDir = shotDir[:-1]
+
 				os.chdir(shotDir)
 				print("Current working directory: {0}".format(os.getcwd()))
 				olPr.eLine()

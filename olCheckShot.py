@@ -25,11 +25,7 @@ import sys
 import time
 from datetime import datetime
 
-myOS = (sys.platform)
-if myOS ==  "cygwin":
-	pgmDir = "/cygdrive/e/OCR/P06/PROGRAM/"
-else:
-	pgmDir = "/home/ol/OCR/P06/PROGRAM/"
+pgmDir = "/opt/checkShot/"
 
 # Silent mode for sys.path
 from io import StringIO
@@ -88,8 +84,6 @@ def olTitle():
 ### INTRO
 # ----------------------------------------
 def olIntro():
-	print("myOS   :", myOS)
-	print("myMach :", myMach)
 	print("myDate :", myDate)
 	print("curDir :", curDir)
 	print("prjDir :", prjDir)
@@ -97,6 +91,7 @@ def olIntro():
 	print("webDir :", webDir)
 	print("logDir :", logDir)
 	print("pgmDir :", pgmDir)
+	print("libDir :", libDir)
 	print("checkShot :",checkShot)
 	print("seqReport :", seqReport)
 	print("report :", report)
@@ -139,8 +134,13 @@ def checkArgv():
 		olPr.eLine()
 	elif n == 2:
 		askedShot = sys.argv[1]
+
+		lastChar = (askedShot[-1])
+		if lastChar == "/":
+			askedShot = askedShot[:-1]
 		splitAskedShot = os.path.split(askedShot)
 		askedDir = (splitAskedShot[1])
+		print(askedShot)
 
 		splitPath = os.path.split(curDir)
 		lastDir = (splitPath[1])
@@ -833,7 +833,6 @@ with open(logCS, 'a') as sLog:
 		verifyPics()
 		isShotValid()
 		detailPics()
-
 
 # ----------------------------------------
 ### END
