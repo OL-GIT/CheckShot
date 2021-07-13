@@ -94,20 +94,20 @@ class olHtml():
 ### Make Head
 	def mkHead(shotPath):
 		print('<!DOCTYPE html>\n<html>\n<head>\n<title>')
-		print("    shotCheck", shotPath) 
+		print("    checkShot", shotPath) 
 		print('</title>\n</head>\n<body bgcolor="#000000" text="#ffffff" link="#0088ff" vlink="#0088ff" alink="#0088ff">')
 		print('<font face="Arial">\n<center>\n<h1>')
-		print("    SHOTCHECK") 
+		print("    CHECKSHOT") 
 		print('</h1>')
 
 # ----------------------------------------
 ### Make seqHead
 	def mkSeqHead(seqPath):
 		print('<!DOCTYPE html>\n<html>\n<head>\n<title>')
-		print("    seqCheck", seqPath) 
+		print("    checkSeq", seqPath) 
 		print('</title>\n</head>\n<body bgcolor="#000000" text="#ffffff" link="#0088ff" vlink="#0088ff" alink="#0088ff">')
 		print('<font face="Arial">\n<center>\n<h1>')
-		print('    <a href="intro.htm" target="right">SEQCHECK</a>')
+		print('    <a href="intro.htm" target="right">CHECKSEQ</a>')
 		print('</h1>')
 
 # ----------------------------------------
