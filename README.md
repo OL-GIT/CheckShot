@@ -54,7 +54,12 @@ Needed in the installation directory :
   
 and the subDirectories :
   * olCheckLibs/
+    * olCheckLib.py
+    * olHtmlLib.py
   * olCheckWebRef/
+    * index.htm
+    * intro.htm
+    * seqReport.htm
 
 
 
@@ -112,7 +117,7 @@ It does not need any argument :
 
 >Archived versions of report.htm are copied to report_$PROJ_$SEQ_$SHOT_DATE_TIME.htm
 
-- The global log files will be found in $PROJECT/LOGS/ (olCheckSeqlog.DATE-TIME.txt)
+- The global log files will be found in $PROJ/LOGS/ (olCheckSeqlog.DATE-TIME.txt)
 
 >They contain short versions of the console dumps.
 

@@ -105,7 +105,7 @@ Il n'a pas besoin d'argument :
 
 >Des versions archivées de report.htm sont copiées dans report_$PROJ_$SEQ_$SHOT_DATE_TIME.htm
 
-- Les fichiers globaux de log sont dans $PROJECT/LOGS/ (olCheckSeqlog.DATE-TIME.txt)
+- Les fichiers globaux de log sont dans $PROJ/LOGS/ (olCheckSeqlog.DATE-TIME.txt)
 
 >Ils contiennent des versions courtes des retours console.
 
