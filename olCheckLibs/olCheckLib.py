@@ -1,5 +1,11 @@
 # -*- coding: utf8 -*-
 
+# ----------------------------------------
+### LICENSE
+# ----------------------------------------
+# MIT License - Copyright (c) 2021 OL-GIT
+
+# ----------------------------------------
 # Various Checks
 import os
 import sys
