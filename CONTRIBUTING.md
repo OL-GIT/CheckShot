@@ -12,3 +12,6 @@
 ## Code upgrade :
 - Any better way of doing something ?
 - Other better way of scripting ?
+
+## Issue :
+Feel free to post any issue[here](https://github.com/OL-GIT/CheckShot/issues)
