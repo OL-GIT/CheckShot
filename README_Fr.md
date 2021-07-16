@@ -49,7 +49,12 @@ Dans le repertoire d'installation doivent figurer :
   
 et les répertoires :
   * olCheckLibs/
+    * olCheckLib.py
+    * olHtmlLib.py
   * olCheckWebRef/
+    * index.htm
+    * intro.htm
+    * seqReport.htm
 
 
 ## Installation :
