@@ -7,6 +7,7 @@
 - Graphical interface
 
 ## Updates :
+- Variables in an external config file
 - HTML management with the HTML.parser methods
 - Errors management with the logging method
 
