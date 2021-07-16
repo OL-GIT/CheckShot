@@ -19,7 +19,7 @@ Both call functions in olCheckLib.py and olHtmlLib.py
 
 ## Operation :
 
-# olCheckSeq.py
+### olCheckSeq.py
 
 - IMPORTS : Necessary modules for the script.
 - VARIABLES : All the variables used in the script.
@@ -47,7 +47,7 @@ Both call functions in olCheckLib.py and olHtmlLib.py
 - END
 
 
-# olCheckShot.py
+### olCheckShot.py
 
 - IMPORTS : Necessary modules for the script.
 - VARIABLES : All the variables used in the script.
