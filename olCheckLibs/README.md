@@ -2,8 +2,8 @@
 
 ### olCheckLib.py contains : ###
 - colors definitions for console dump
-- lines defninitions for console dump
-- various checks on bouds and images
+- lines definitions for console dump
+- various checks on bounds and images
 
 ### olHtmlLib.py contains : ###
 - HTML definitions for HTTP style
