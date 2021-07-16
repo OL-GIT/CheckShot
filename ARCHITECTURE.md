@@ -37,11 +37,11 @@ Both call functions in olCheckLib.py and olHtmlLib.py
   (in the console, in the main log and in the seqReport)
   * else lists the shots
   for all the files in the asked shot list :
-  . if file is a directory :
+  - if file is a directory :
     -> executes olCheckShot.py
-  . if file does not exist :
-  . if file is not a directory :
-  . if file has wrong permissions :
+  - if file does not exist :
+  - if file is not a directory :
+  - if file has wrong permissions :
   	-> prints an error message
 - Close the log
 - END
@@ -62,49 +62,49 @@ Both call functions in olCheckLib.py and olHtmlLib.py
 	* makeLog : start the shot part of the log
 	* isReport : make a backup of report.htm if if already exists in the shot
 	* listContent : check the content of the shot
-	  . if file is .bounds, checks if it is empty (with olChecks.isEmpty)
-	  . if file is report.htm, print a message
-	  . if other htm file, ignore
-	  . else, append file to the list to be processed
+	  - if file is .bounds, checks if it is empty (with olChecks.isEmpty)
+	  - if file is report.htm, print a message
+	  - if other htm file, ignore
+	  - else, append file to the list to be processed
 	* nbImagesVsDuration : check if number of images is correct
 	  (with olChecks.myBounds and olChecks.nbImages)
-	  . if .bounds does not exist, print a message
-	  . if number of images is OK, print a message
-	  . if number of images is not, print a message
+	  - if .bounds does not exist, print a message
+	  - if number of images is OK, print a message
+	  - if number of images is not, print a message
 	  If shot is not OK, set validShot to 0
 	* compareNbPics : launches nbImagesVsDuration
 	* numInPic : check if 2nd field is numerical
-	  . if so, print a message
-	  . if not, print a message and set validShot to 0
+	  - if so, print a message
+	  - if not, print a message and set validShot to 0
 	* comparePicsWithBounds : compare the required number of images with the files in list
 	  (with olChecks.myBounds)
-	  . if bounds is missing or incorrect, print a message
-	  . else, make a list of possible missing images
+	  - if bounds is missing or incorrect, print a message
+	  - else, make a list of possible missing images
 	  If there are missing images, set validShot to 0
 	* verifyExts : verify that the file extensions are correct (ext variable)
-	  . check the number of fields (must be 3)
-	  . check if the extension is correct
-	  . print messages and write to logs
+	  - check the number of fields (must be 3)
+	  - check if the extension is correct
+	  - print messages and write to logs
 	* verifyPics : check the size of the files
-	  . if empty pics are found, add them to the empty list
-	  . print messages and write to logs
+	  - if empty pics are found, add them to the empty list
+	  - print messages and write to logs
 	* isShotValid : generate the conclusion
-	  . if validShot is still 1, shot is validated
-	  . if validShot is 0, shot is wrong	  
-	  . print messages and write to logs
+	  - if validShot is still 1, shot is validated
+	  - if validShot is 0, shot is wrong	  
+	  - print messages and write to logs
 	* detailPics : print a full list of the files
-	  . uid + gid + size + file
-	  . add this list in report.htm
+	  - uid + gid + size + file
+	  - add this list in report.htm
 	* thisIsTheEnd : print the end of the checkShot
 - EXECUTION : 
 	* Calls the functions
-	  . olTitle, olIntro, olLogs
+	  - olTitle, olIntro, olLogs
 	* Define the current directory and the variables used by the fonctions
-	  . define validShot to 1
+	  - define validShot to 1
 	* Define the HTML report name and calls the makeLog function
 	* Execute the checks functions
-	  . olHtml.mkPageStart
-	  . checkArgv, listContent, compareNbPics, numInPic, comparePicsWithBounds,
+	  - olHtml.mkPageStart
+	  - checkArgv, listContent, compareNbPics, numInPic, comparePicsWithBounds,
 	    verifyExts, verifyPics, isShotValid, detailPics
 - END : Finish the report.
 
