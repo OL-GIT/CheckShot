@@ -1,4 +1,4 @@
-# CheckShot
+# CheckShot v1.0
 ### Verifies sub-directories integrity of a post-production project. ###
 
 

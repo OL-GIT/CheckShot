@@ -1,4 +1,4 @@
-# CheckShot
+# CheckShot v1.0
 ### Vérifie l'intégrité des sous-répertoires d'un projet de post-production. ###
 
 
