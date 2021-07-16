@@ -52,7 +52,7 @@ checkShot = pgmDir + "olCheckShot.py"
 ### TITLE
 # ----------------------------------------
 olPr.bLine()
-print("# \033[33m----------- OLCHECKSEQ ---------- v0.4 --------- 210713 ------------\033[0m #")
+print("# \033[33m----------- OLCHECKSEQ ---------- v1.0 --------- 210716 ------------\033[0m #")
 olPr.bLine()
 text=""
 olCol.Yellow(text)

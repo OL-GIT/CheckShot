@@ -57,7 +57,7 @@ report = curDir + "/report.htm"
 # ----------------------------------------
 def olTitle():
 	olPr.sLine()
-	print("# \033[33m------------ OLCHECKSHOT --------- v0.4 --------- 210713 -----------\033[0m #")
+	print("# \033[33m------------ OLCHECKSHOT --------- v1.0 --------- 210716 -----------\033[0m #")
 	olPr.sLine()
 	text=""
 	olCol.Yellow(text)
