@@ -8,7 +8,7 @@
 
 ## Updates :
 - HTML management with the HTML.parser methods
-- Errors management
+- Errors management with the logging method
 
 ## Translations :
 - Console and logs
