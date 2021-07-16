@@ -6,19 +6,15 @@
 # ----------------------------------------
 # MIT License - Copyright (c) 2021 OL-GIT
 
-
 # ----------------------------------------
 ### Images extension
 # ----------------------------------------
 ext = "jpg"
 
-
 # ----------------------------------------
 ### IMPORTS
 # ----------------------------------------
 import os
-from os import listdir, stat
-import re
 import shutil
 import socket
 import sys
@@ -215,7 +211,7 @@ def makeLog():
 	with open(logCS, 'a') as sLog:
 		olPr.eLine()
 
-		sys.stdout = sLog					# set output to sLog
+		sys.stdout = sLog						# set output to sLog
 		olPr.dLine1()
 		olPr.dLine2()
 		print("# olCheckShot                                             ", myDate, "#")
@@ -226,7 +222,7 @@ def makeLog():
 		olPr.sLine()
 		print("Shot directory: {0}".format(os.getcwd()))
 		olPr.eLine()
-		sys.stdout = org_stdout			# Back to std output
+		sys.stdout = org_stdout					# Back to std output
 
 	olPr.eLine()
 
@@ -263,7 +259,7 @@ def isReport():
 			print("  . Copying to", savReport)
 			print("  . Writing", repName)
 			print("")
-			sys.stdout = org_stdout			# Back to std output
+			sys.stdout = org_stdout				# Back to std output
 
 	else:
 		text = '    *** No report yet for this Shot.'
@@ -338,9 +334,9 @@ def nbImagesVsDuration(listPics):
 		print("        <li> WARNING - Unable to estimate required number of images")
 		reportEnd()
 
-		sys.stdout = sLog					# set output to sLog
+		sys.stdout = sLog						# set output to sLog
 		print("WARNING - No .bounds file")
-		sys.stdout = org_stdout			# Back to std output
+		sys.stdout = org_stdout					# Back to std output
 
 
 	elif duration == nbPics:
@@ -350,9 +346,9 @@ def nbImagesVsDuration(listPics):
 		print("        <li> OK - Required pics = Number of pics")
 		reportEnd()
 
-		sys.stdout = sLog					# set output to sLog
+		sys.stdout = sLog						# set output to sLog
 		print("OK - Required pics = Number of pics")
-		sys.stdout = org_stdout			# Back to std output
+		sys.stdout = org_stdout					# Back to std output
 
 	else:
 		print("*** NO *** Required pics != Number of pics ")
@@ -366,9 +362,9 @@ def nbImagesVsDuration(listPics):
 		olCss.LSe()
 		reportEnd()
 
-		sys.stdout = sLog					# set output to sLog
+		sys.stdout = sLog						# set output to sLog
 		print("WARNING - Required pics != Number of pics")
-		sys.stdout = org_stdout			# Back to std output
+		sys.stdout = org_stdout					# Back to std output
 
 		valid = 0
 
@@ -416,9 +412,9 @@ def numInPic():
 		print("        <li> OK - Second fields are numerical in all pics")
 		reportEnd()
 	
-		sys.stdout = sLog					# set output to sLog
+		sys.stdout = sLog						# set output to sLog
 		print("OK - Second fields are numerical in all pic")
-		sys.stdout = org_stdout			# Back to std output
+		sys.stdout = org_stdout					# Back to std output
 
 	else:
 		print("*** Warning *** : Non numerical 2nd field in these pics :\n", nonNumeric)
@@ -432,9 +428,9 @@ def numInPic():
 		olCss.LSe()
 		reportEnd()
 
-		sys.stdout = sLog					# set output to sLog
+		sys.stdout = sLog						# set output to sLog
 		print("WARNING - Non numerical 2nd field in these pics")
-		sys.stdout = org_stdout			# Back to std output
+		sys.stdout = org_stdout					# Back to std output
 
 		valid = 0
 
@@ -494,7 +490,7 @@ def comparePicsWithBounds():
 			sys.stdout = sLog					# set output to sLog
 			print("NO - Missing pics :")
 			print(missPics)
-			sys.stdout = org_stdout			# Back to std output
+			sys.stdout = org_stdout				# Back to std output
 
 
 	if valid == 0:
@@ -506,9 +502,9 @@ def comparePicsWithBounds():
 		print("        <li> OK - No missing pics")
 		reportEnd()
 
-		sys.stdout = sLog					# set output to sLog
+		sys.stdout = sLog						# set output to sLog
 		print("OK - No missing pics")
-		sys.stdout = org_stdout			# Back to std output
+		sys.stdout = org_stdout					# Back to std output
 
 	# print("VALIDSHOT :", validShot)
 	olPr.eLine()
@@ -566,10 +562,10 @@ def verifyExts():
 		olCss.LSe()
 		reportEnd()
 
-		sys.stdout = sLog					# set output to sLog
+		sys.stdout = sLog						# set output to sLog
 		print("NO - Wrong number of fields :")
 		print(badFields)
-		sys.stdout = org_stdout			# Back to std output
+		sys.stdout = org_stdout					# Back to std output
 
 	else:
 		reportStart(leftField)
@@ -596,10 +592,10 @@ def verifyExts():
 		olCss.LSe()
 		reportEnd()
 
-		sys.stdout = sLog					# set output to sLog
+		sys.stdout = sLog						# set output to sLog
 		print("NO - Bad Extensions")
 		print(extMatch)
-		sys.stdout = org_stdout			# Back to std output
+		sys.stdout = org_stdout					# Back to std output
 
 		return valid
 
@@ -612,9 +608,9 @@ def verifyExts():
 		print("        <li> OK - No bad Extensions")
 		reportEnd()
 
-		sys.stdout = sLog					# set output to sLog
+		sys.stdout = sLog						# set output to sLog
 		print("OK - No bad Extensions")
-		sys.stdout = org_stdout			# Back to std output
+		sys.stdout = org_stdout					# Back to std output
 
 
 # ----------------------------------------
@@ -649,11 +645,11 @@ def verifyPics():
 		olCss.LSe()
 		reportEnd()
 
-		sys.stdout = sLog					# set output to sLog
+		sys.stdout = sLog						# set output to sLog
 		print("WARNING - Empty pics found")
 		print(emptyPics)
 		olPr.eLine()
-		sys.stdout = org_stdout			# Back to std output
+		sys.stdout = org_stdout					# Back to std output
 
 	else:
 		print("*** OK *** No empty pics found")
@@ -662,10 +658,10 @@ def verifyPics():
 		print("        <li> OK - No empty pics found")
 		reportEnd()
 
-		sys.stdout = sLog					# set output to sLog
+		sys.stdout = sLog						# set output to sLog
 		print("OK - No empty pics found")
 		olPr.eLine()
-		sys.stdout = org_stdout			# Back to std output
+		sys.stdout = org_stdout					# Back to std output
 
 	olPr.eLine()
 	return validShot;
@@ -733,7 +729,7 @@ def isShotValid():
 def detailPics():
 	print("\033[93m--- Function detailPics \033[0m")
 
-	sys.stdout = olReport					# set output to olReport
+	sys.stdout = olReport						# set output to olReport
 	olCss.TRs()
 	olCss.TDsC2g()
 	olPr.eLine()
@@ -755,7 +751,7 @@ def detailPics():
 	olPr.eLine()
 	olCss.TDe()
 	olCss.TRe()
-	sys.stdout = org_stdout					# Back to std output
+	sys.stdout = org_stdout						# Back to std output
 
 
 # ----------------------------------------
@@ -839,5 +835,5 @@ with open(logCS, 'a') as sLog:
 # ----------------------------------------
 print("Finished Report")
 olHtml.mkPageEnd()
-sys.stdout = org_stdout					# Back to std output
+sys.stdout = org_stdout							# Back to std output
 thisIsTheEnd()

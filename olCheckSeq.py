@@ -10,8 +10,6 @@
 ### IMPORTS
 # ----------------------------------------
 import os
-from os import listdir, stat
-import re
 import shutil
 import socket
 import sys
@@ -101,7 +99,6 @@ if not os.path.isdir(logDir):
 else:
 	print(logDir, "already exists.")
 
-global logCS
 logCS = logDir + "olCheckSeqlog." + myDate + ".txt"
 print("logFile :", logCS)
 
@@ -117,7 +114,6 @@ if not logCS:
 	open(logCS, 'x')
 else:
 	pass
-	# print(logCS, "already exists")
 
 with open(logCS, 'w') as sLog:
 	sys.stdout = sLog					# set output to sLog
@@ -165,7 +161,6 @@ with open(logCS, 'a') as sLog:
 seqRepName = webDir + "/seqReport.htm"
 olHtml.mkSeqPageStart(curDir)
 print("Writing Report", seqRepName)
-global olSeqReport
 org_stdout = sys.stdout						# keep std output in variable
 
 
@@ -186,7 +181,7 @@ if n == 1:
 	olPr.eLine()
 
 	with open(report, 'a') as olSeqReport:
-		sys.stdout = olSeqReport	
+		sys.stdout = olSeqReport				# set output to seqReport
 		olCss.TRs()
 		olCss.TDs()
 		olCss.CEN()
@@ -209,7 +204,6 @@ if n == 1:
 else:
 
 	for itSeqLoop in range(1, n):
-		# print("i :", i, sys.argv[i], end = " ")
 		olPr.eLine()
 		olPr.eLine()
 		olPr.dLine1()
@@ -274,7 +268,6 @@ else:
 
 				### Go back to Seq Level
 				os.chdir(curDir)
-				# os.chdir("..")
 				curDir = os.getcwd()
 
 				splitPath = shotDir.split("/")
@@ -288,14 +281,13 @@ else:
 						linkPath = linkPath+"/"+shot
 
 				with open(report, 'a') as olSeqReport:
-					sys.stdout = olSeqReport	
+					sys.stdout = olSeqReport				# set output to seqReport
 					olCss.TRs()
 					olCss.TDs()
 					print('        SHOT : <a href="../'+linkPath+'/report.htm" target="right">'+linkPath+'</a>')
 					olCss.TDe()
 					olCss.TRe()
 					sys.stdout = org_stdout					# Back to std output
-
 
 		except FileNotFoundError:
 			print("*** {0} does not exist".format(shotDir))
@@ -306,7 +298,6 @@ else:
 				olPr.eLine()
 				sys.stdout = org_stdout			# Back to std output
 
-
 		except NotADirectoryError:
 			print("*** {0} is not a directory".format(shotDir))
 
@@ -315,7 +306,6 @@ else:
 				print("*** {0} is not a directory".format(shotDir))
 				olPr.eLine()
 				sys.stdout = org_stdout			# Back to std output
-
 
 		except PermissionError:
 			print("*** No permission to go to {0}".format(shotDir))
@@ -326,9 +316,6 @@ else:
 				olPr.eLine()
 				sys.stdout = org_stdout			# Back to std output
 
-
-		# zeDir = os.getcwd()
-		# print(zeDir)
 		olPr.eLine()
 
 
