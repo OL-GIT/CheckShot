@@ -14,4 +14,4 @@
 - Other better way of scripting ?
 
 ## Issue :
-Feel free to post any issue[here](https://github.com/OL-GIT/CheckShot/issues)
+Feel free to post any issue [here](https://github.com/OL-GIT/CheckShot/issues)
