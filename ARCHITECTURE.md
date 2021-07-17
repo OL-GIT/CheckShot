@@ -168,7 +168,7 @@ Both call functions in olCheckLib.py and olHtmlLib.py
 	* Tables : TR*, TD*
 	* Listing : LST (takes value "listing", called by olCheckShot.py)
 
-- class olHtml
+- class olHtml : HTML pages and tables management
 	* mkHead : writes HEAD of checkShot page
 	* mkSeqHead : writes HEAD of checkSeq page
 	* mkTableStart : writes the beginning of checkShot table
