@@ -153,7 +153,7 @@ Both call functions in olCheckLib.py and olHtmlLib.py
 		- if not, assigns 0 to mystart and myend
 		- il values ar not integers, assigns 0
 		- returns mystart, myend and duration variables
-	* nbImages : counts the images
+  * nbImages : counts the images
 		- returns nbPics
 
 
