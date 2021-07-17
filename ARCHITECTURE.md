@@ -44,11 +44,13 @@ Both call functions in olCheckLib.py and olHtmlLib.py
   * else lists the shots
   for all the files in the asked shot list :
   - if file is a directory :
-    -> executes olCheckShot.py
-  - if file does not exist,
-  - if file is not a directory,
+    - executes olCheckShot.py
+  - if file does not exist :
+  	- prints an error message
+  - if file is not a directory :
+  	- prints an error message
   - if file has wrong permissions :
-  	-> prints an error message
+  	- prints an error message
 
 - Closes the log
 
